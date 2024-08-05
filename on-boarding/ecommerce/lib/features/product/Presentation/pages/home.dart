@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './color/colors.dart';
+import '../../../../core/color/colors.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -82,6 +82,7 @@ class HomePage extends StatelessWidget {
                 const Text(
                   'Available Products',
                   style: TextStyle(
+                    fontFamily: 'Poppins',
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -138,7 +139,8 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      shadowColor: Colors.black,
       child: GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, '/details');
@@ -149,6 +151,7 @@ class ProductCard extends StatelessWidget {
             Image.asset(
               'images/shoe.jpg', // Local image path
               height: 200,
+
               width: double.infinity, // Make the image full width
               fit: BoxFit.cover,
             ),
