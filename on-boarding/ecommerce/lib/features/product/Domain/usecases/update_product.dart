@@ -4,12 +4,12 @@ import '../../../../core/errors/falilures.dart';
 import '../entities/product.dart';
 import '../repositories/product_repository.dart';
 
-class InsertProduct {
+class UpdateProduct {
   final ProductRepository productRepository;
 
-  InsertProduct(this.productRepository);
+  UpdateProduct(this.productRepository);
 
-  Future<Either<Failure, void>> call(Product product) {
+  Future<Either<Failure, void>> execute(Product product) {
     return productRepository.insertProduct(product);
   }
 }
