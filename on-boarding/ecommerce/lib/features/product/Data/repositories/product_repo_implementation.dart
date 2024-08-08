@@ -6,7 +6,7 @@ import '../../domain/repositories/product_repository.dart';
 
 class ProductRepositoryImpl implements ProductRepository {
   @override
-  Future<Either<Failure, void>> deleteProduct(String productid) {
+  Future<Either<Failure, int>> deleteProduct(String productid) {
     // TODO: implement deleteProduct
     throw UnimplementedError();
   }
