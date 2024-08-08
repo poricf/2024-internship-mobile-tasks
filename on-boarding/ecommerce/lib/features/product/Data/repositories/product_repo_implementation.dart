@@ -9,7 +9,7 @@ class ProductRepositoryImpl implements ProductRepository {
   Future<Either<Failure, int>> deleteProduct(String productid) {
     // TODO: implement deleteProduct
     throw UnimplementedError();
-  }
+  } 
 
   @override
   Future<Either<Failure, Product>> getProduct(String productid) {
@@ -27,4 +27,12 @@ class ProductRepositoryImpl implements ProductRepository {
     // TODO: implement updateProduct
     throw UnimplementedError();
   }
+  
+  @override
+  Future<Either<Failure, List<Product>>> getAllProduct() {
+    // TODO: implement getAllProduct
+    throw UnimplementedError();
+  }
+  
+  
 }
