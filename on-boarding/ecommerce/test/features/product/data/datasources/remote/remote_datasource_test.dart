@@ -19,13 +19,14 @@ void main() {
   });
 
   const productid = '1';
+  
 
   group('get product data', () {
     test('should return 200 as status ok', () async {
       //arrange
       when(mockHttpClient.get(Uri.parse(Urls.getProductbyId(productid))))
           .thenAnswer((_) async => http.Response(
-              readJson('helpers/fixtures/product_model.json'), 200));
+              readJson('helper/Dummy/product_model.json'), 200));
 
       //act
 

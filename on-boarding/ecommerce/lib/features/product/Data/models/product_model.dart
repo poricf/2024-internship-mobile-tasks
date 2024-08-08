@@ -3,17 +3,17 @@ import 'dart:async';
 import '../../domain/entities/product.dart';
 
 class ProductModel extends Product {
-  @override
+ 
   final String productid;
 
 
-  @override
+
   final String name;
-  @override
+
   final String description;
-  @override
+
   final double price;
-  @override
+
   final String imageUrl;
 
   const ProductModel(
@@ -45,5 +45,11 @@ class ProductModel extends Product {
         'imageUrl': imageUrl,
       };
 
+  Product toEntity() => Product(
+      productid: productid,
+      name: name,
+      description: description,
+      price: price,
+      imageUrl: imageUrl);
 
 }

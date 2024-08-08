@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../../../../../../core/errors/exceptions.dart';
 import '../../../../../core/constants/constants.dart';
+import '../../../../../core/errors/exceptions.dart';
 import '../../../domain/entities/product.dart';
 import '../../models/product_model.dart';
 
@@ -12,7 +12,7 @@ abstract class RemoteDataSource {
     throw UnimplementedError();
   }
 
-  Future<Product> getProduct(String productid) {
+  Future<ProductModel> getProductById(String productid) {
     throw UnimplementedError();
   }
 
@@ -31,7 +31,7 @@ class RemoteDataSourceImpl extends RemoteDataSource {
   RemoteDataSourceImpl({required this.client});
 
   @override
-  Future<ProductModel> getProduct(String productid) async {
+  Future<ProductModel> getProductById(String productid) async {
     final response =
         await client.get(Uri.parse(Urls.getProductbyId(productid)));
 
