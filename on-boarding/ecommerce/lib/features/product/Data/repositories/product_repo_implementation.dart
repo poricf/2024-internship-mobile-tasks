@@ -27,7 +27,7 @@ class ProductRepositoryImpl implements ProductRepository {
     } on ServerException {
       return const Left(ServerFailure('An error has occurred'));
     } on SocketException {
-      return const Left(ConnectionFailure('Failed to connect to the network'));
+      return const Left(ConnectionFailure('Failed to connect to the network', message: 'Hello'));
     }
   }
 
