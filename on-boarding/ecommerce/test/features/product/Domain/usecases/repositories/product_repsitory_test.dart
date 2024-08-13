@@ -37,7 +37,7 @@ void main() {
   const productid = '1';
 
   group('should get current product', () {
-      test('should return product entity', () async {
+    test('should return product entity', () async {
       //arrange
 
       when(mockRemoteDataSource.getProductById(productid))
@@ -81,8 +81,8 @@ void main() {
         // assert
         expect(
             result,
-            equals(const Left(
-                ConnectionFailure('Failed to connect to the network'))));
+            equals(
+                const Left(ConnectionFailure('try again', message: 'Hello'))));
       },
     );
   });

@@ -17,7 +17,7 @@ import 'package:ecommerce/features/product/Data/models/product_model.dart'
 import 'package:ecommerce/features/product/Domain/entities/product.dart' as _i9;
 import 'package:ecommerce/features/product/Domain/repositories/product_repository.dart'
     as _i3;
-import 'package:ecommerce/features/product/Domain/usecases/get_product.dart'
+import 'package:ecommerce/features/product/Domain/usecases/product_usecase.dart'
     as _i10;
 import 'package:http/http.dart' as _i6;
 import 'package:internet_connection_checker/internet_connection_checker.dart'
@@ -176,18 +176,26 @@ class MockProductRepository extends _i1.Mock implements _i3.ProductRepository {
 
   @override
   _i7.Future<_i2.Either<_i8.Failure, void>> updateProduct(
-          _i9.Product? product) =>
+    String? productid,
+    _i9.Product? product,
+  ) =>
       (super.noSuchMethod(
         Invocation.method(
           #updateProduct,
-          [product],
+          [
+            productid,
+            product,
+          ],
         ),
         returnValue: _i7.Future<_i2.Either<_i8.Failure, void>>.value(
             _FakeEither_0<_i8.Failure, void>(
           this,
           Invocation.method(
             #updateProduct,
-            [product],
+            [
+              productid,
+              product,
+            ],
           ),
         )),
       ) as _i7.Future<_i2.Either<_i8.Failure, void>>);
@@ -210,11 +218,11 @@ class MockProductRepository extends _i1.Mock implements _i3.ProductRepository {
       ) as _i7.Future<_i2.Either<_i8.Failure, int>>);
 }
 
-/// A class which mocks [GetProductUseCase].
+/// A class which mocks [ProductUsecase].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGetProductUseCase extends _i1.Mock implements _i10.GetProductUseCase {
-  MockGetProductUseCase() {
+class MockProductUsecase extends _i1.Mock implements _i10.ProductUsecase {
+  MockProductUsecase() {
     _i1.throwOnMissingStub(this);
   }
 
@@ -228,21 +236,142 @@ class MockGetProductUseCase extends _i1.Mock implements _i10.GetProductUseCase {
       ) as _i3.ProductRepository);
 
   @override
-  _i7.Future<_i2.Either<_i8.Failure, _i9.Product>> execute(String? productid) =>
+  List<Object> get props => (super.noSuchMethod(
+        Invocation.getter(#props),
+        returnValue: <Object>[],
+      ) as List<Object>);
+
+  @override
+  _i7.Future<_i2.Either<_i8.Failure, List<_i9.Product>>> getAllProducts() =>
       (super.noSuchMethod(
         Invocation.method(
-          #execute,
-          [productid],
+          #getAllProducts,
+          [],
+        ),
+        returnValue:
+            _i7.Future<_i2.Either<_i8.Failure, List<_i9.Product>>>.value(
+                _FakeEither_0<_i8.Failure, List<_i9.Product>>(
+          this,
+          Invocation.method(
+            #getAllProducts,
+            [],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i8.Failure, List<_i9.Product>>>);
+
+  @override
+  _i7.Future<_i2.Either<_i8.Failure, _i9.Product>> getProduct(
+          String? productId) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getProduct,
+          [productId],
         ),
         returnValue: _i7.Future<_i2.Either<_i8.Failure, _i9.Product>>.value(
             _FakeEither_0<_i8.Failure, _i9.Product>(
           this,
           Invocation.method(
-            #execute,
-            [productid],
+            #getProduct,
+            [productId],
           ),
         )),
       ) as _i7.Future<_i2.Either<_i8.Failure, _i9.Product>>);
+
+  @override
+  _i7.Future<_i2.Either<_i8.Failure, void>> addProduct(_i9.Product? product) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addProduct,
+          [product],
+        ),
+        returnValue: _i7.Future<_i2.Either<_i8.Failure, void>>.value(
+            _FakeEither_0<_i8.Failure, void>(
+          this,
+          Invocation.method(
+            #addProduct,
+            [product],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i8.Failure, void>>);
+
+  @override
+  _i7.Future<_i2.Either<_i8.Failure, void>> updateProduct(
+    String? productid,
+    _i9.Product? product,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateProduct,
+          [
+            productid,
+            product,
+          ],
+        ),
+        returnValue: _i7.Future<_i2.Either<_i8.Failure, void>>.value(
+            _FakeEither_0<_i8.Failure, void>(
+          this,
+          Invocation.method(
+            #updateProduct,
+            [
+              productid,
+              product,
+            ],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i8.Failure, void>>);
+
+  @override
+  _i7.Future<_i2.Either<_i8.Failure, void>> deleteProduct(String? productId) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteProduct,
+          [productId],
+        ),
+        returnValue: _i7.Future<_i2.Either<_i8.Failure, void>>.value(
+            _FakeEither_0<_i8.Failure, void>(
+          this,
+          Invocation.method(
+            #deleteProduct,
+            [productId],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i8.Failure, void>>);
+
+  @override
+  _i7.Future<_i2.Either<_i8.Failure, _i9.Product>> dataById(
+          String? productId) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #dataById,
+          [productId],
+        ),
+        returnValue: _i7.Future<_i2.Either<_i8.Failure, _i9.Product>>.value(
+            _FakeEither_0<_i8.Failure, _i9.Product>(
+          this,
+          Invocation.method(
+            #dataById,
+            [productId],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i8.Failure, _i9.Product>>);
+
+  @override
+  _i7.Future<_i2.Either<_i8.Failure, List<_i9.Product>>> dataForAll() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #dataForAll,
+          [],
+        ),
+        returnValue:
+            _i7.Future<_i2.Either<_i8.Failure, List<_i9.Product>>>.value(
+                _FakeEither_0<_i8.Failure, List<_i9.Product>>(
+          this,
+          Invocation.method(
+            #dataForAll,
+            [],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i8.Failure, List<_i9.Product>>>);
 }
 
 /// A class which mocks [RemoteDataSource].
