@@ -11,11 +11,11 @@ class ProductRepositoryImpl implements ProductRepository {
   final RemoteDataSource remoteDataSource;
   final NetworkInfo networkInfo;
 
-  ProductRepositoryImpl(
+  const ProductRepositoryImpl(
       {required this.remoteDataSource, required this.networkInfo});
 
   @override
-  Future<Either<Failure, int>> deleteProduct(String productid) {
+  Future<Either<Failure, bool>> deleteProduct(String productid) {
     throw UnimplementedError();
   }
 
@@ -27,23 +27,24 @@ class ProductRepositoryImpl implements ProductRepository {
     } on ServerException {
       return const Left(ServerFailure('An error has occurred'));
     } on SocketException {
-      return const Left(ConnectionFailure('Failed to connect to the network', message: 'Hello'));
+      return const Left(ConnectionFailure('Failed to connect to the network',
+          message: 'Hello'));
     }
   }
 
   @override
-  Future<Either<Failure, void>> insertProduct(Product product) {
+  Future<Either<Failure, bool>> insertProduct(Product product) {
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, void>> updateProduct(Product product) {
+  Future<Either<Failure, bool>> updateProduct(
+      String productid, Product product) {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<Either<Failure, List<Product>>> getAllProduct() {
-    // TODO: implement getAllProduct
     throw UnimplementedError();
   }
 }
