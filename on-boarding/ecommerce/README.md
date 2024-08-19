@@ -26,7 +26,7 @@ For help getting started with Flutter development, view the [online documentatio
 - Flutter
 - Dart
 - BloC for state management
-- get-it Flutter Riverpod for dependency injection
+- get-it for dependency injection
 
 ## Contributing
 
