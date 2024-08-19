@@ -9,9 +9,9 @@ import 'package:product_8/features/product/domain/use_case/delete_product_usecas
 import 'package:product_8/features/product/domain/use_case/get_product_by_id_usecase.dart';
 import 'package:product_8/features/product/domain/use_case/insert_product_usecase.dart';
 import 'package:product_8/features/product/domain/use_case/update_product_usecase.dart';
-import 'package:product_8/features/product/presentetion/bloc/product_bloc.dart';
-import 'package:product_8/features/product/presentetion/bloc/product_event.dart';
-import 'package:product_8/features/product/presentetion/bloc/product_state.dart';
+import 'package:product_8/features/product/presentation/bloc/product_bloc.dart';
+import 'package:product_8/features/product/presentation/bloc/product_event.dart';
+import 'package:product_8/features/product/presentation/bloc/product_state.dart';
 
 import '../../helpers/test_helper.mocks.dart';
 void main() {

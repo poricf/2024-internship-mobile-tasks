@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/usecase/usecase.dart';
-import '../../domain/entities/product_entity.dart';
 import '../../domain/use_case/delete_product_usecase.dart';
 import '../../domain/use_case/get_product_by_id_usecase.dart';
 import '../../domain/use_case/get_products_usecase.dart';

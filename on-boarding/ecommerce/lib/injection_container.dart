@@ -15,7 +15,7 @@ import 'features/product/domain/use_case/get_product_by_id_usecase.dart';
 import 'features/product/domain/use_case/get_products_usecase.dart';
 import 'features/product/domain/use_case/insert_product_usecase.dart';
 import 'features/product/domain/use_case/update_product_usecase.dart';
-import 'features/product/presentetion/bloc/product_bloc.dart';
+import 'features/product/presentation/bloc/product_bloc.dart';
 
 
 final sl = GetIt.instance;

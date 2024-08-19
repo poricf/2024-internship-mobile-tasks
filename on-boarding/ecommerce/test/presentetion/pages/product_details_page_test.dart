@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:product_8/features/product/domain/entities/product_entity.dart';
-import 'package:product_8/features/product/presentetion/bloc/product_bloc.dart';
-import 'package:product_8/features/product/presentetion/bloc/product_event.dart';
-import 'package:product_8/features/product/presentetion/bloc/product_state.dart';
-import 'package:product_8/features/product/presentetion/pages/product_details_page.dart';
+import 'package:product_8/features/product/presentation/bloc/product_bloc.dart';
+import 'package:product_8/features/product/presentation/bloc/product_event.dart';
+import 'package:product_8/features/product/presentation/bloc/product_state.dart';
+import 'package:product_8/features/product/presentation/pages/product_details_page.dart';
 
 
 class MockProductBloc extends MockBloc<ProductEvent, ProductState>

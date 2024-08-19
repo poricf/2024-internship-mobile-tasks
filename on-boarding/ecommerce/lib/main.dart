@@ -4,12 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'features/product/domain/entities/product_entity.dart';
-import 'features/product/presentetion/bloc/product_bloc.dart';
-import 'features/product/presentetion/pages/add_product_page.dart';
-import 'features/product/presentetion/pages/home_page.dart';
-import 'features/product/presentetion/pages/product_details_page.dart';
-import 'features/product/presentetion/pages/search_page.dart';
-import 'features/product/presentetion/pages/update_page.dart';
+import 'features/product/presentation/bloc/product_bloc.dart';
+import 'features/product/presentation/pages/add_product_page.dart';
+import 'features/product/presentation/pages/home_page.dart';
+import 'features/product/presentation/pages/product_details_page.dart';
+import 'features/product/presentation/pages/search_page.dart';
+import 'features/product/presentation/pages/update_page.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
 
