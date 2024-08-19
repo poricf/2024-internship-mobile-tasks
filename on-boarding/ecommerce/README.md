@@ -1,52 +1,39 @@
-# Flutter E-commerce App
+# Ecommerce Flutter App
 
+A new Flutter application for an ecommerce platform.
 
-This Flutter-based e-commerce app is built using Clean Architecture for scalability, maintainability, and testability, with a clear separation of concerns across layers.
+## Getting Started
 
+This project is a starting point for a Flutter application.
 
-## Project Overview
-    
-A robust Flutter e-commerce application that adheres to Clean Architecture principles, ensuring a well-structured and maintainable codebase.
+A few resources to get you started if this is your first Flutter project:
 
-## Architecture
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-The app is divided into three key layers:
+For help getting started with Flutter development, view the [online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on mobile development, and a full API reference.
 
-### Domain Layer: 
-Core business logic, entities, and use cases.
+## Features
 
-### Data Layer: 
-Handles data from remote APIs and local sources.
+- **Product Listing**: Display a list of products with images, titles, descriptions, and prices.
+- **Product Details**: Allow users to view detailed information about a selected product, including additional images, specifications, and reviews.
+- **Shopping Cart**: Enable users to add products to their shopping cart, view the cart contents, and proceed to checkout.
+- **Checkout Process**: Implement a secure and user-friendly checkout process, including payment options and order confirmation.
+- **User Accounts**: Allow users to create accounts, login, and manage their profile information and order history.
+- **Search and Filtering**: Provide a search functionality and the ability to filter products based on various criteria (e.g., category, price range, rating).
+- **Push Notifications**: Send push notifications to users for order updates, special offers, and other relevant information.
 
-### Presentation Layer: 
-UI components and state management.
+## Technology Stack
 
-## Installation
-
-### Clone the repository:
-
-git clone https://github.com/chachidani/2024-internship-mobile-tasks/tree/main/mobile%5BNardos%20Daniel%5D/product_8
-
-Navigate to the project directory:
-
-```cd '.\mobile`[Nardos Daniel`]\' \ product_8 ```
-
-Install dependencies:
-
-```flutter pub get```
-
-Run the app:
-
-```flutter run```
+- Flutter
+- Dart
+- BloC for state management
+- get-it Flutter Riverpod for dependency injection
 
 ## Contributing
 
-Contributions are welcome! Follow the GitFlow process:
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-```Fork the repo.```
+## License
 
-```Create a feature branch.```
-
-```Commit your changes.```
-
-```Open a pull request.```
+This project is licensed under the [MIT License](LICENSE).
