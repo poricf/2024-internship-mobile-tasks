@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
+import '../../../../core/failure/failure.dart';
 
-import '../../../../core/errors/falilures.dart';
-import '../entities/product.dart';
+import '../entities/product_entity.dart';
 
-abstract class ProductRepository  {
-  Future<Either<Failure, Product>> getProduct(String productid);
-  Future<Either<Failure,List<Product>>> getAllProduct();
-  Future<Either<Failure, bool>> insertProduct(Product product);
-  Future<Either<Failure, bool>> updateProduct(String productid,Product product);
-  Future<Either<Failure, bool>> deleteProduct(String productid);
-}
+abstract class ProductRepositories {
+  Future<Either<Failure, List<Product>>> getProducts();
+  Future<Either <Failure , Product>> getProduct(String id);
+  Future<Either <Failure , Product>> createProduct(Product product);
+  Future<Either <Failure , Product>> updateProduct(Product product);
+  Future<Either<Failure , void>> deleteProduct(String id);
+} 
