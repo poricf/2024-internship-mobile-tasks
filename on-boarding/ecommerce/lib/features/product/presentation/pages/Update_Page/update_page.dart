@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../domain/entities/product_entity.dart';
-import '../bloc/product_bloc.dart';
-import '../bloc/product_event.dart';
-import '../bloc/product_state.dart';
-import '../widgets/custom_buttom.dart';
+import '../../../domain/entities/product_entity.dart';
+import '../../bloc/product_bloc.dart';
+import '../../bloc/product_event.dart';
+import '../../bloc/product_state.dart';
+import '../../widgets/custom_buttom.dart';
 
 class UpDate extends StatefulWidget {
   final Product product;

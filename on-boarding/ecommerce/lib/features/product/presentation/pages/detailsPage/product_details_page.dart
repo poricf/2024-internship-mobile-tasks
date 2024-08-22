@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/entities/product_entity.dart';
-import '../bloc/product_bloc.dart';
-import '../bloc/product_event.dart';
-import '../bloc/product_state.dart';
-import '../widgets/custom_buttom.dart';
+import '../../../domain/entities/product_entity.dart';
+import '../../bloc/product_bloc.dart';
+import '../../bloc/product_event.dart';
+import '../../bloc/product_state.dart';
+import '../../widgets/custom_buttom.dart';
 
 class Detailspage extends StatelessWidget {
   final Product product;

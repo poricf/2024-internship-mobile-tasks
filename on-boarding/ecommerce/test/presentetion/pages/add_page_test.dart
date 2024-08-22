@@ -6,7 +6,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:product_8/features/product/domain/entities/product_entity.dart';
 import 'package:product_8/features/product/presentation/bloc/product_bloc.dart';
 import 'package:product_8/features/product/presentation/bloc/product_state.dart';
-import 'package:product_8/features/product/presentation/pages/add_product_page.dart';
+import 'package:product_8/features/product/presentation/pages/Add_Product/add_product_page.dart';
 
 // Mock the bloc
 class MockProductBloc extends Mock implements ProductBloc {}
