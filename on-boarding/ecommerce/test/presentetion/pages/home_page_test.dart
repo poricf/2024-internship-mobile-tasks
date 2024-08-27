@@ -66,12 +66,13 @@ void main() {
 
   testWidgets('Displays error message when ProductError state is active',
       (WidgetTester tester) async {
-    // Arrange
+    // Arrange 
     when(() => mockProductBloc.state).thenReturn(ProductError());
 
     // Act
     await tester.pumpWidget(_buildTestableWidget());
     await tester.pumpAndSettle();
+    
 
     // Assert
     expect(find.text('Failed to load products'), findsOneWidget);
