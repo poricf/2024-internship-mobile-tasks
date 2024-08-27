@@ -34,7 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     style: TextStyle(fontWeight: FontWeight.w400),
                   ),
                   Text(
-                    'Hello, Yohannes',
+                    'Hello, Fahmi',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],

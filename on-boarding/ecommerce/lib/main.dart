@@ -7,9 +7,9 @@ import 'features/product/domain/entities/product_entity.dart';
 import 'features/product/presentation/bloc/product_bloc.dart';
 import 'features/product/presentation/pages/Add_Product/add_product_page.dart';
 import 'features/product/presentation/pages/Home_Page/home_page.dart';
-import 'features/product/presentation/pages/detailsPage/product_details_page.dart';
 import 'features/product/presentation/pages/SearchPage/search_page.dart';
 import 'features/product/presentation/pages/Update_Page/update_page.dart';
+import 'features/product/presentation/pages/detailsPage/product_details_page.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
 

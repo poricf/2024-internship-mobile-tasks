@@ -7,7 +7,7 @@ import '../../bloc/product_state.dart';
 import '../../widgets/product_card.dart';
 
 class SearchPage extends StatelessWidget {
-  SearchPage({super.key});
+  const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,78 +26,98 @@ class SearchPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: BlocBuilder<ProductBloc, ProductState>(
-        builder: (context, state) {
-          return Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: homeBuilder(context),
-          );
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: homeBuilder(context),
       ),
     );
   }
 }
 
 Widget homeBuilder(BuildContext context) {
-  TextEditingController _searchController = TextEditingController();
-  return BlocBuilder<ProductBloc, ProductState>(
-    builder: (context, state) {
-      return Column(
+  context.read<ProductBloc>().add(LoadProduct());
+  return Column(
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                child: TextField(
-                  maxLength: 53,
-                  controller: _searchController,
-                  onChanged: (value) {
-                    context
-                        .read<ProductBloc>()
-                        .add(FilteredProductEvent(text: value));
-                  },
-                  decoration: InputDecoration(
-                      labelText: 'Leather',
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0)),
-                      suffixIcon: Icon(Icons.arrow_forward)),
-                ),
-              ),
-              const SizedBox(
-                width: 8,
-              ),
-              GestureDetector(
-                onTap: () => _showBottomSheet(context),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
+          Container(
+            width: 290,
+            height: 50,
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black45),
+                borderRadius: BorderRadius.circular(10)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Leather',
+                    style: TextStyle(fontSize: 20, color: Colors.black45),
+                  ),
+                  Icon(
+                    Icons.arrow_forward,
                     color: Colors.indigoAccent.shade400,
+                    weight: 30,
                   ),
-                  child: IconButton(
-                    onPressed: () => _showBottomSheet(context),
-                    icon: const Icon(
-                      Icons.filter_list_rounded,
-                      color: Colors.white,
-                    ),
-                  ),
+                ],
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () => _showBottomSheet(context),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.indigoAccent.shade400,
+              ),
+              child: IconButton(
+                onPressed: () => _showBottomSheet(context),
+                icon: const Icon(
+                  Icons.filter_list_rounded,
+                  color: Colors.white,
                 ),
               ),
-            ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: (state as ProductLoaded).products.length,
-              itemBuilder: (context, index) {
-                return ProductCard(product: state.products[index]);
-              },
             ),
           ),
         ],
-      );
-    },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      BlocBuilder<ProductBloc, ProductState>(builder: (context, state) {
+        // switch (state.runtimeType) {
+        if (state is ProductLoading) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is ProductLoaded) {
+          final successState = state;
+          return Expanded(
+            child: RefreshIndicator(
+              onRefresh: () async {
+                context.read<ProductBloc>().add(LoadProduct());
+              },
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 1.3,
+                ),
+                itemCount: successState.products.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ProductCard(
+                    product: successState.products[index],
+                  );
+                },
+              ),
+            ),
+          );
+        } else {
+          return const Center(child: Text('Error loading products'));
+        }
+      }),
+    ],
   );
 }
 

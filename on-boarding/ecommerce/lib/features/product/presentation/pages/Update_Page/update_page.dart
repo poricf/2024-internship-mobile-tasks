@@ -32,11 +32,11 @@ class _UpDateState extends State<UpDate> {
   void initState() {
     super.initState();
 
-   nameController = TextEditingController(text: widget.product?.name ?? '');
+   nameController = TextEditingController(text: widget.product.name ?? '');
       priceController =
-          TextEditingController(text: widget.product?.price.toString() ?? '');
+          TextEditingController(text: widget.product.price.toString());
       descriptionController =
-          TextEditingController(text: widget.product?.description ?? '');
+          TextEditingController(text: widget.product.description);
       typeController = TextEditingController();
   }
 
